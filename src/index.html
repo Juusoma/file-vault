@@ -6,6 +6,22 @@
     <title>Template</title>
 </head>
 <body>
-    <h1>Hello, Template!</h1>
+    <div class="file-select-wrapper">
+        <div class="file-upload-wrapper">
+            <input type="file" id="file-upload" name="file-upload" multiple style="display: none;">
+            <button id="file-upload-button" type="button">Select files</button>
+        </div>
+        <div id="file-dropbox">
+            <span>DROP FILES HERE</span>
+        </div>
+        <div id="file-list">
+            <div class="file-list-item">
+                <div class="file-item-icon-wrapper" data-file-type="hpgdaw">
+                    <img src="./img/file.svg" alt="file icon" class="file-item-icon">
+                </div>
+                <p class="file-item-name">Empty file.png</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

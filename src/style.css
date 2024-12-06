@@ -1,3 +1,135 @@
-h1{
-    color: red;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+button{
+    appearance: none;
+    --border-color: rgb(189, 189, 189);
+    --background-color: rgb(226, 226, 226);
+    --font-color: rgb(68, 132, 147);
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color);
+    border-radius: 6px;
+    min-width: 50px;
+    min-height: 40px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+    color: var(--font-color);
+    font-weight: bold;
+    transition: all .1s;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+    --border-color: rgb(212, 212, 212);
+    --background-color: rgb(230, 230, 230);
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.file-select-wrapper{
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 100px 200px;
+    place-content: center;
+}
+
+.file-upload-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 40px;
+    justify-self: center;
+    align-self: center;
+}
+
+#file-dropbox{
+    background-color: rgb(235, 235, 235);
+    border: 2px dashed rgb(208, 208, 208);
+    border-radius: 6px;
+    text-align: center;
+    align-content: center;
+
+    color: grey;
+    font-size: 1.2rem;
+
+    user-select: none;
+    transition: .1s;
+    transition-property: background-color, border;
+}
+
+#file-dropbox:hover{
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+
+#file-dropbox:active{
+    background-color: rgb(220, 220, 220);
+}
+
+#file-dropbox.highlight{
+    border: 2px solid rgb(89, 133, 255);
+}
+
+#file-list{
+    display: grid;
+    grid-auto-rows: 80px;
+    margin-top: 16px;
+    gap: 16px;
+    justify-content: stretch;
+    align-content: stretch;
+}
+
+.file-list-item{
+    display: grid;
+    grid-template-columns: 70px auto;
+    grid-template-rows: 100%;
+    align-items: center;
+    gap: 32px;
+    background-color: rgb(225, 225, 225);
+    border: 2px solid rgb(195, 195, 195);
+    border-radius: 6px;
+}
+
+.file-item-icon-wrapper{
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    position: relative;
+}
+
+.file-item-icon-wrapper::after{
+    content: "." attr(data-file-type);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    translate: -50%;
+    font-size: .7rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: "..";
+}
+
+.file-item-icon-wrapper > img{
+    height: 100%;
+    width: auto;
 }
